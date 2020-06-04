@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    
+    </ion-buttons>
+    <ion-title>الوصفات</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" [routerLink]="['/search']">
+        <ion-icon slot="start" name="search"></ion-icon>
+        <label>بحت</label>   
+      </ion-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page"> 
+  <ion-list *ngFor="let arraysRecipe of arraysRecipes">
+    <ion-item *ngFor="let recipe of arraysRecipe; let i=index;" (click)="showRecipe(i)" no-lines>
+        <ion-card>
+            <img class="card-image" [src]="recipe.image01"/>
+         
+         <ion-card-content>
+            <ion-card-title>
+              {{recipe.title}}
+            </ion-card-title>
+         </ion-card-content>
+
+        <ul class="card-recipes-info">
+            <li>
+                <ion-icon name="time"></ion-icon>{{recipe.cooktime}}
+            </li>
+            <li>
+                <ion-icon name="timer"></ion-icon>{{recipe.preptime}}
+            </li>
+            <li>
+                <ion-icon name="body"></ion-icon>{{recipe.servings}}
+            </li>                                
+        </ul>
+
+    </ion-card>
+    </ion-item>    
+
+</ion-list>
+</ion-content>

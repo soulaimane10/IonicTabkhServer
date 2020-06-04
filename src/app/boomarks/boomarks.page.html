@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    
+    </ion-buttons>
+    <ion-title>المفضلة</ion-title>
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page"> 
+  <ion-list *ngFor="let rec of recipes; let i=index;">
+    
+    
+    <ion-item  (click)="showRecipe(i)" no-lines text-wrap>
+          <ion-card>
+            <img class="card-image" [src]="rec.image01"/>
+         
+         <ion-card-content>
+            <ion-card-title>
+              {{rec.title}}
+            </ion-card-title>
+         </ion-card-content>
+
+        <ul class="card-recipes-info">
+            <li>
+                <ion-icon name="time"></ion-icon>{{rec.cooktime}}
+            </li>
+            <li>
+                <ion-icon name="timer"></ion-icon>{{rec.preptime}}
+            </li>
+            <li>
+                <ion-icon name="body"></ion-icon>{{rec.servings}}
+            </li>                                
+        </ul>
+
+    </ion-card>
+    </ion-item>    
+
+</ion-list>
+</ion-content>

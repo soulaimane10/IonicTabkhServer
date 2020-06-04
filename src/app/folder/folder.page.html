@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>طبخ</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="outline" [routerLink]="['/search']">
+        <ion-icon slot="start" name="search"></ion-icon>
+     <label>بحت</label>   
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let arraysCategory of arraysCategorys">
+    <ion-item *ngFor="let Category of arraysCategory; let i=index;" no-lines>
+  
+    <ion-card (click)="showRecipes(Category.id_category, Category.label)">
+      <img class="card-image" [src]="Category.image"/>
+      <div class="card-title"><span class="card-title-cat" >{{Category.label}}</span></div>
+    </ion-card>
+  
+    </ion-item>
+  </ion-list>
+</ion-content>

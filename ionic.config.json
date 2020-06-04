@@ -1,0 +1,7 @@
+{
+  "name": "ionic-tabkh",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
